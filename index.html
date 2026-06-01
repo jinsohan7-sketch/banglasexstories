@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,272 +11,206 @@
 :root{
   --bg:#0d1117;--surface:#161b22;--surface2:#1c2128;--border:#30363d;
   --accent:#00b894;--text:#e6edf3;--text2:#8b949e;--text3:#58a6ff;
-  --gold:#ffd700;--red:#ff4757;--pink:#fd79a8;
-  --fs:16px;
+  --gold:#ffd700;--red:#ff4757;
 }
-body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;font-size:var(--fs);line-height:1.6;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;font-size:15px;line-height:1.6;min-height:100vh}
 button{cursor:pointer;font-family:inherit}
 input,textarea,select{font-family:inherit}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 
-/* ── AGE GATE ── */
-#ageGate{position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:9999;display:flex;align-items:center;justify-content:center}
-.age-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:44px 40px;text-align:center;max-width:380px;width:90%}
-.age-icon{font-size:3rem;margin-bottom:10px}
-.age-box h2{font-size:1.5rem;font-weight:700;margin-bottom:8px}
+/* AGE GATE */
+#ageGate{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9999;display:flex;align-items:center;justify-content:center}
+.age-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:40px 36px;text-align:center;max-width:380px;width:90%}
+.age-box .big{font-size:3rem;margin-bottom:8px}
+.age-box h2{font-size:1.4rem;font-weight:700;margin-bottom:8px}
 .age-box p{color:var(--text2);font-size:0.9rem;margin-bottom:28px;line-height:1.7}
 .age-btns{display:flex;gap:10px;justify-content:center}
-.age-yes{background:var(--accent);color:#000;padding:11px 30px;border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer;transition:background .15s}
-.age-yes:hover{background:#00d2a8}
-.age-no{background:var(--surface2);color:var(--text2);padding:11px 30px;border:1px solid var(--border);border-radius:8px;font-size:1rem;cursor:pointer}
+.age-yes{background:var(--accent);color:#000;padding:10px 28px;border:none;border-radius:8px;font-size:1rem;font-weight:700;cursor:pointer}
+.age-no{background:var(--surface2);color:var(--text2);padding:10px 28px;border:1px solid var(--border);border-radius:8px;font-size:1rem;cursor:pointer}
 
-/* ── TOPBAR ── */
+/* TOPBAR */
 #topbar{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200}
 .topbar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:52px;padding:0 16px;gap:0}
-.site-logo{font-size:1.05rem;font-weight:700;color:var(--red);margin-right:16px;white-space:nowrap}
-.site-logo span{color:var(--text2);font-size:0.7rem;font-weight:400;margin-left:3px}
-.nav-links{display:flex;gap:1px;flex:1;overflow-x:auto}
-.nav-links::-webkit-scrollbar{display:none}
-.nav-links button{background:none;border:none;color:var(--text2);font-size:0.82rem;padding:6px 10px;border-radius:6px;transition:color .15s,background .15s;font-weight:500;white-space:nowrap;flex-shrink:0}
+.site-logo{font-size:1.1rem;font-weight:700;color:var(--red);margin-right:20px;white-space:nowrap;letter-spacing:-.01em}
+.site-logo span{color:var(--text2);font-size:0.72rem;font-weight:400;margin-left:3px}
+.nav-links{display:flex;gap:2px;flex:1}
+.nav-links button{background:none;border:none;color:var(--text2);font-size:0.85rem;padding:6px 12px;border-radius:6px;transition:color .15s,background .15s;font-weight:500}
 .nav-links button:hover,.nav-links button.active{color:var(--text);background:var(--surface2)}
 .nav-links button.active{color:var(--accent)}
-.topbar-right{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}
-.age-badge{font-size:0.65rem;font-weight:700;background:var(--red);color:#fff;padding:3px 6px;border-radius:3px}
-.user-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:5px 12px;border-radius:6px;font-size:0.8rem;transition:all .15s}
-.user-btn:hover{border-color:var(--accent);color:var(--accent)}
-.user-avatar{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#000;font-size:0.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.age-badge{font-size:0.68rem;font-weight:700;background:var(--red);color:#fff;padding:3px 7px;border-radius:4px;margin-left:auto}
 
-/* ── SEARCH BAR ── */
+/* SEARCH */
 .search-wrap{padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border)}
-.search-inner{max-width:1200px;margin:0 auto;display:flex;gap:8px}
-.search-inner input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:6px;font-size:0.88rem;outline:none;transition:border-color .15s}
-.search-inner input:focus{border-color:var(--accent)}
-.search-inner input::placeholder{color:var(--text2)}
-.search-inner select{background:var(--bg);border:1px solid var(--border);color:var(--text2);padding:8px 10px;border-radius:6px;font-size:0.82rem;outline:none;cursor:pointer}
-.search-inner select:focus{border-color:var(--accent)}
+.search-wrap .inner{max-width:1200px;margin:0 auto}
+.search-wrap input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:9px 14px;border-radius:6px;font-size:0.9rem;outline:none;transition:border-color .15s}
+.search-wrap input:focus{border-color:var(--accent)}
+.search-wrap input::placeholder{color:var(--text2)}
 
-/* ── LAYOUT ── */
-.main-wrap{max-width:1200px;margin:0 auto;padding:16px 16px;display:grid;grid-template-columns:1fr 260px;gap:16px}
+/* LAYOUT */
+.main-wrap{max-width:1200px;margin:0 auto;padding:18px 16px;display:grid;grid-template-columns:1fr 260px;gap:18px}
 @media(max-width:800px){.main-wrap{grid-template-columns:1fr}}
 
-/* ── TABS ── */
-.tabs{display:flex;gap:2px;margin-bottom:12px;background:var(--surface2);border-radius:7px;padding:3px}
-.tab{flex:1;padding:6px;background:none;border:none;color:var(--text2);font-size:0.8rem;font-weight:600;border-radius:5px;cursor:pointer;transition:all .15s;text-align:center;white-space:nowrap}
-.tab.active{background:var(--surface);color:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+/* SECTION TITLE */
+.sec-title{font-size:0.92rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px;margin-bottom:10px}
+.sec-title .dot{width:3px;height:14px;background:var(--accent);border-radius:2px;flex-shrink:0}
 
-/* ── BOOK CARDS ── */
+/* BOOK CARD LIST */
 .book-list{display:flex;flex-direction:column;gap:1px}
-.book-card{background:var(--surface);border:1px solid var(--border);padding:13px 14px;cursor:pointer;transition:background .15s;display:flex;gap:12px;align-items:flex-start}
+.book-card{background:var(--surface);border:1px solid var(--border);padding:14px 16px;cursor:pointer;transition:background .15s;display:flex;gap:12px;align-items:flex-start}
 .book-card:first-child{border-radius:8px 8px 0 0}
 .book-card:last-child{border-radius:0 0 8px 8px}
 .book-card+.book-card{border-top:none}
 .book-card:hover{background:var(--surface2)}
-.book-num{font-size:1rem;font-weight:700;color:var(--border);width:26px;flex-shrink:0;padding-top:2px;text-align:center}
+.book-num{font-size:1.1rem;font-weight:700;color:var(--border);width:28px;flex-shrink:0;padding-top:2px;text-align:center}
 .book-info{flex:1;min-width:0}
-.book-title{font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:3px}
-.book-meta{font-size:0.76rem;color:var(--text2);display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px}
-.book-synopsis{font-size:0.81rem;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:5px}
-.book-tags{display:flex;gap:4px;flex-wrap:wrap}
-.book-tag{font-size:0.68rem;background:var(--bg);border:1px solid var(--border);color:var(--text2);padding:1px 6px;border-radius:3px}
-.book-right{display:flex;flex-direction:column;gap:4px;align-items:flex-end;flex-shrink:0}
-.book-badge{font-size:0.68rem;padding:2px 7px;border-radius:4px;font-weight:600;white-space:nowrap}
+.book-title{font-size:0.97rem;font-weight:700;color:var(--text);margin-bottom:3px}
+.book-title:hover{color:var(--accent)}
+.book-meta{font-size:0.78rem;color:var(--text2);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:5px}
+.book-synopsis{font-size:0.82rem;color:var(--text2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:6px}
+.book-tags{display:flex;gap:5px;flex-wrap:wrap}
+.book-tag{font-size:0.7rem;background:var(--bg);border:1px solid var(--border);color:var(--text2);padding:1px 7px;border-radius:3px}
+.book-badge{font-size:0.7rem;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap;flex-shrink:0}
 .badge-genre{background:var(--surface2);border:1px solid var(--border);color:var(--text3)}
 .badge-ongoing{background:rgba(0,184,148,.1);border:1px solid var(--accent);color:var(--accent)}
 .badge-done{background:rgba(88,166,255,.1);border:1px solid var(--text3);color:var(--text3)}
-.bm-icon{font-size:0.9rem;padding:3px 6px;background:none;border:1px solid var(--border);border-radius:4px;color:var(--text2);transition:all .15s}
-.bm-icon:hover,.bm-icon.saved{color:var(--gold);border-color:var(--gold)}
+.book-right{display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0}
 
-/* ── SIDEBAR ── */
-.sidebar{display:flex;flex-direction:column;gap:12px}
-.sidebar-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:13px}
-.sidebar-title{font-size:0.75rem;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--border)}
-.genre-pill{background:none;border:none;color:var(--text2);font-size:0.83rem;padding:5px 8px;border-radius:5px;text-align:left;width:100%;transition:all .15s;font-weight:500;display:flex;justify-content:space-between;align-items:center}
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:14px}
+.sidebar-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px}
+.sidebar-title{font-size:0.78rem;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+
+/* GENRE PILLS */
+.pill-wrap{display:flex;flex-direction:column;gap:2px}
+.genre-pill{background:none;border:none;color:var(--text2);font-size:0.85rem;padding:6px 10px;border-radius:5px;text-align:left;width:100%;transition:all .15s;font-weight:500}
 .genre-pill:hover,.genre-pill.active{background:var(--surface2);color:var(--text)}
 .genre-pill.active{color:var(--accent)}
-.genre-count{font-size:0.7rem;color:var(--text2)}
-.tag-cloud{display:flex;gap:4px;flex-wrap:wrap}
-.tag-btn{background:var(--bg);border:1px solid var(--border);color:var(--text2);padding:3px 8px;border-radius:4px;font-size:0.73rem;cursor:pointer;transition:all .15s}
+
+/* TAG CLOUD */
+.tag-cloud{display:flex;gap:5px;flex-wrap:wrap}
+.tag-btn{background:var(--bg);border:1px solid var(--border);color:var(--text2);padding:3px 9px;border-radius:4px;font-size:0.75rem;cursor:pointer;transition:all .15s}
 .tag-btn:hover{color:var(--text3);border-color:var(--text3)}
-.rank-item{display:flex;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer}
+
+/* RANKING */
+.rank-list{display:flex;flex-direction:column;gap:0}
+.rank-item{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);cursor:pointer}
 .rank-item:last-child{border-bottom:none}
 .rank-item:hover .rank-title{color:var(--accent)}
-.rank-n{font-size:0.9rem;font-weight:700;width:16px;text-align:center;flex-shrink:0}
+.rank-n{font-size:0.95rem;font-weight:700;width:18px;text-align:center;flex-shrink:0}
 .r1{color:var(--gold)}.r2{color:#c0c0c0}.r3{color:#cd7f32}.r4,.r5{color:var(--text2)}
 .rank-info{flex:1;min-width:0}
-.rank-title{font-size:0.81rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .15s}
-.rank-sub{font-size:0.7rem;color:var(--text2)}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
-.stat-cell{background:var(--surface2);border-radius:5px;padding:8px;text-align:center}
-.stat-num{font-size:1rem;font-weight:700;color:var(--accent)}
-.stat-label{font-size:0.68rem;color:var(--text2)}
-.ch-sidebar-item{padding:6px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.rank-title{font-size:0.83rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .15s}
+.rank-sub{font-size:0.72rem;color:var(--text2)}
+
+/* STAT */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.stat-cell{background:var(--surface2);border-radius:6px;padding:9px;text-align:center}
+.stat-num{font-size:1.1rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:0.7rem;color:var(--text2)}
+
+/* CHAPTER LIST IN SIDEBAR */
+.ch-sidebar-item{padding:7px 0;border-bottom:1px solid var(--border);cursor:pointer}
 .ch-sidebar-item:last-child{border-bottom:none}
 .ch-sidebar-item:hover .ch-s-title{color:var(--accent)}
-.ch-s-book{font-size:0.71rem;color:var(--accent);font-weight:600;margin-bottom:1px}
-.ch-s-title{font-size:0.81rem;color:var(--text);transition:color .15s}
-.ch-s-date{font-size:0.7rem;color:var(--text2)}
+.ch-s-book{font-size:0.73rem;color:var(--accent);font-weight:600;margin-bottom:1px}
+.ch-s-title{font-size:0.83rem;color:var(--text);transition:color .15s}
+.ch-s-date{font-size:0.72rem;color:var(--text2)}
 
-/* ── PAGES ── */
+/* TABS */
+.tabs{display:flex;gap:2px;margin-bottom:12px;background:var(--surface2);border-radius:7px;padding:3px}
+.tab{flex:1;padding:6px;background:none;border:none;color:var(--text2);font-size:0.82rem;font-weight:600;border-radius:5px;cursor:pointer;transition:all .15s;text-align:center}
+.tab.active{background:var(--surface);color:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+
+/* PAGES */
 .page{display:none}
 .page.active{display:block}
 
-/* ── BOOK DETAIL ── */
-.sub-header{background:var(--surface);border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;gap:10px;position:sticky;top:52px;z-index:100}
-.back-btn{background:none;border:none;color:var(--accent);font-size:0.85rem;font-weight:600}
-.sub-header h3{font-size:0.88rem;color:var(--text2);font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.book-detail-body{max-width:900px;margin:0 auto;padding:20px 16px}
-.book-detail-top{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px;margin-bottom:14px}
-.book-detail-title{font-size:1.3rem;font-weight:700;margin-bottom:5px}
-.book-detail-meta{font-size:0.8rem;color:var(--text2);display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}
-.book-detail-synopsis{font-size:0.88rem;color:var(--text2);line-height:1.7;margin-bottom:10px}
-.book-detail-tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
-.book-detail-actions{display:flex;gap:8px;flex-wrap:wrap}
-.btn{padding:7px 16px;border-radius:6px;font-size:0.82rem;font-weight:600;border:none;cursor:pointer;transition:all .15s}
-.btn-primary{background:var(--accent);color:#000}
-.btn-primary:hover{background:#00d2a8}
-.btn-secondary{background:var(--surface2);border:1px solid var(--border);color:var(--text)}
-.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
-.btn-like{background:var(--surface2);border:1px solid var(--border);color:var(--text2)}
-.btn-like.liked{background:rgba(253,121,168,.1);border-color:var(--pink);color:var(--pink)}
-.btn-follow{background:var(--surface2);border:1px solid var(--border);color:var(--text2)}
-.btn-follow.following{background:rgba(0,184,148,.1);border-color:var(--accent);color:var(--accent)}
-.chapter-list-hd{font-size:0.85rem;font-weight:700;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between}
+/* ── BOOK DETAIL PAGE ── */
+#bookPage{padding:0}
+.book-detail-header{background:var(--surface);border-bottom:1px solid var(--border);padding:16px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:52px;z-index:100}
+.back-btn{background:none;border:none;color:var(--accent);font-size:0.88rem;font-weight:600}
+.book-detail-header h3{font-size:0.95rem;color:var(--text2)}
+.book-detail-body{max-width:900px;margin:0 auto;padding:24px 16px}
+.book-detail-top{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:18px}
+.book-detail-title{font-size:1.4rem;font-weight:700;margin-bottom:6px}
+.book-detail-meta{font-size:0.82rem;color:var(--text2);display:flex;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.book-detail-synopsis{font-size:0.9rem;color:var(--text2);line-height:1.7;margin-bottom:12px}
+.book-detail-tags{display:flex;gap:6px;flex-wrap:wrap}
+.chapter-list-title{font-size:0.9rem;font-weight:700;color:var(--text);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
 .chapter-rows{display:flex;flex-direction:column;gap:1px}
-.chapter-row{background:var(--surface);border:1px solid var(--border);padding:10px 13px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .15s}
+.chapter-row{background:var(--surface);border:1px solid var(--border);padding:11px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:background .15s}
 .chapter-row:first-child{border-radius:8px 8px 0 0}
 .chapter-row:last-child{border-radius:0 0 8px 8px}
 .chapter-row+.chapter-row{border-top:none}
 .chapter-row:hover{background:var(--surface2)}
-.ch-num{font-size:0.72rem;color:var(--text2);width:22px;flex-shrink:0;font-weight:600}
-.ch-row-title{font-size:0.88rem;color:var(--text);flex:1}
-.ch-date{font-size:0.72rem;color:var(--text2);flex-shrink:0}
-.read-sm{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:3px 9px;border-radius:4px;font-size:0.73rem;font-weight:600;flex-shrink:0;transition:all .15s}
-.read-sm:hover{background:var(--accent);border-color:var(--accent);color:#000}
-.ch-row-done{color:var(--accent);font-size:0.7rem;flex-shrink:0}
+.ch-num{font-size:0.75rem;color:var(--text2);width:24px;flex-shrink:0;font-weight:600}
+.ch-title{font-size:0.9rem;color:var(--text);flex:1}
+.ch-date{font-size:0.75rem;color:var(--text2);flex-shrink:0}
+.read-btn-sm{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:3px 10px;border-radius:4px;font-size:0.75rem;font-weight:600;flex-shrink:0;transition:all .15s}
+.read-btn-sm:hover{background:var(--accent);border-color:var(--accent);color:#000}
 
 /* ── READ PAGE ── */
-.read-progress{height:3px;background:var(--border);position:sticky;top:52px;z-index:101}
-.read-progress-bar{height:100%;background:var(--accent);width:0%;transition:width .1s}
-.read-topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 18px;display:flex;align-items:center;gap:10px;position:sticky;top:55px;z-index:100}
-.read-topbar h3{font-size:0.85rem;color:var(--text2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.read-controls{display:flex;gap:6px;align-items:center;flex-shrink:0}
-.font-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:3px 8px;border-radius:4px;font-size:0.8rem;transition:all .15s}
-.font-btn:hover{border-color:var(--accent);color:var(--accent)}
-.read-body{max-width:680px;margin:0 auto;padding:32px 16px 80px}
-.read-book-name{color:var(--accent);font-size:0.8rem;font-weight:600;display:block;margin-bottom:4px}
-.read-ch-title{font-size:1.25rem;font-weight:700;margin-bottom:24px;line-height:1.4}
-#readContent p{line-height:2.1;margin-bottom:1.4em;color:#cdd9e5}
-.ch-nav{display:flex;gap:8px;margin-top:28px;padding-top:16px;border-top:1px solid var(--border)}
-.ch-nav button{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:9px;border-radius:6px;font-size:0.83rem;font-weight:600;transition:all .15s}
+#readPage{padding:0}
+.read-topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:52px;z-index:100}
+.read-topbar .back-btn{color:var(--accent)}
+.read-topbar h3{font-size:0.88rem;color:var(--text2);font-weight:400}
+.read-body{max-width:680px;margin:0 auto;padding:36px 16px 80px}
+.read-book-name{color:var(--accent);font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px}
+.read-ch-title{font-size:1.35rem;font-weight:700;margin-bottom:20px;line-height:1.4}
+.read-body p{font-size:1.02rem;line-height:2.1;margin-bottom:1.5em;color:#cdd9e5}
+.ch-nav{display:flex;gap:10px;margin-top:32px;padding-top:18px;border-top:1px solid var(--border)}
+.ch-nav button{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px;border-radius:6px;font-size:0.85rem;font-weight:600;transition:all .15s}
 .ch-nav button:hover{background:var(--accent);border-color:var(--accent);color:#000}
-.ch-nav-info{text-align:center;font-size:0.75rem;color:var(--text2);margin-top:6px}
+.ch-nav-info{text-align:center;font-size:0.78rem;color:var(--text2);margin-top:8px}
 
-/* ── COMMENTS ── */
-.comments-section{margin-top:28px;padding-top:20px;border-top:1px solid var(--border)}
-.comments-title{font-size:0.9rem;font-weight:700;margin-bottom:14px}
-.comment-form{display:flex;gap:8px;margin-bottom:16px}
-.comment-form input{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:6px;font-size:0.85rem;outline:none;transition:border-color .15s}
-.comment-form input:focus{border-color:var(--accent)}
-.comment-form input::placeholder{color:var(--text2)}
-.comment-form button{background:var(--accent);border:none;color:#000;padding:8px 14px;border-radius:6px;font-size:0.82rem;font-weight:700}
-.comment-list{display:flex;flex-direction:column;gap:8px}
-.comment-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 12px}
-.comment-header{display:flex;align-items:center;gap:8px;margin-bottom:4px}
-.comment-avatar{width:22px;height:22px;border-radius:50%;background:var(--accent);color:#000;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.comment-user{font-size:0.78rem;font-weight:600;color:var(--text)}
-.comment-date{font-size:0.72rem;color:var(--text2)}
-.comment-text{font-size:0.83rem;color:var(--text2);line-height:1.5}
-.no-comments{font-size:0.82rem;color:var(--text2);text-align:center;padding:16px 0}
+/* ── WRITE PAGE ── */
+#writePage{padding:18px 16px;max-width:860px;margin:0 auto}
+.write-tabs{display:flex;gap:2px;margin-bottom:18px;background:var(--surface2);border-radius:7px;padding:3px;max-width:320px}
+.write-tab{flex:1;padding:7px;background:none;border:none;color:var(--text2);font-size:0.85rem;font-weight:600;border-radius:5px;cursor:pointer;transition:all .15s;text-align:center}
+.write-tab.active{background:var(--surface);color:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.write-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px}
+.write-card h2{font-size:1rem;font-weight:700;margin-bottom:18px;color:var(--text)}
+.form-row{margin-bottom:14px}
+.form-label{font-size:0.78rem;color:var(--text2);font-weight:600;margin-bottom:5px;display:block;text-transform:uppercase;letter-spacing:.05em}
+.form-input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:9px 13px;border-radius:6px;font-size:0.9rem;outline:none;transition:border-color .15s}
+.form-input:focus{border-color:var(--accent)}
+.form-input::placeholder{color:var(--text2)}
+textarea.form-input{min-height:300px;resize:vertical;line-height:1.85}
+.form-row-2{display:flex;gap:10px;flex-wrap:wrap}
+.form-row-2>div{flex:1;min-width:140px}
+.write-actions{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+.btn-save{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 18px;border-radius:6px;font-size:0.85rem;font-weight:600}
+.btn-pub{background:var(--accent);border:none;color:#000;padding:8px 22px;border-radius:6px;font-size:0.85rem;font-weight:700}
+.btn-pub:hover{background:#00d2a8}
+.wc{font-size:0.75rem;color:var(--text2);text-align:right;margin-top:3px}
+.my-books-list{display:flex;flex-direction:column;gap:8px}
+.my-book-item{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;display:flex;gap:10px;align-items:center}
+.my-book-item-info{flex:1;min-width:0}
+.my-book-item-title{font-size:0.9rem;font-weight:700;color:var(--text)}
+.my-book-item-meta{font-size:0.75rem;color:var(--text2)}
+.btn-add-ch{background:var(--accent);border:none;color:#000;padding:5px 12px;border-radius:5px;font-size:0.78rem;font-weight:700}
 
-/* ── LATEST FEED ── */
+/* LATEST CHAPTERS PAGE */
+#latestPage .main-wrap{grid-template-columns:1fr}
 .chapter-feed{display:flex;flex-direction:column;gap:1px}
-.ch-feed-item{background:var(--surface);border:1px solid var(--border);padding:11px 13px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .15s}
+.ch-feed-item{background:var(--surface);border:1px solid var(--border);padding:12px 14px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:background .15s}
 .ch-feed-item:first-child{border-radius:8px 8px 0 0}
 .ch-feed-item:last-child{border-radius:0 0 8px 8px}
 .ch-feed-item+.ch-feed-item{border-top:none}
 .ch-feed-item:hover{background:var(--surface2)}
 .ch-feed-info{flex:1;min-width:0}
-.ch-feed-book{font-size:0.73rem;color:var(--accent);font-weight:600;margin-bottom:2px}
-.ch-feed-title{font-size:0.88rem;color:var(--text);font-weight:500}
-.ch-feed-date{font-size:0.72rem;color:var(--text2);margin-top:1px}
+.ch-feed-book{font-size:0.75rem;color:var(--accent);font-weight:600;margin-bottom:2px}
+.ch-feed-title{font-size:0.9rem;color:var(--text);font-weight:500}
+.ch-feed-date{font-size:0.75rem;color:var(--text2);margin-top:1px}
 
-/* ── WRITE PAGE ── */
-#writePage{padding:16px;max-width:860px;margin:0 auto}
-.write-tabs{display:flex;gap:2px;margin-bottom:14px;background:var(--surface2);border-radius:7px;padding:3px;max-width:360px}
-.write-tab{flex:1;padding:7px;background:none;border:none;color:var(--text2);font-size:0.82rem;font-weight:600;border-radius:5px;cursor:pointer;transition:all .15s;text-align:center}
-.write-tab.active{background:var(--surface);color:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.4)}
-.write-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px}
-.write-card h2{font-size:0.95rem;font-weight:700;margin-bottom:16px}
-.form-row{margin-bottom:13px}
-.form-label{font-size:0.75rem;color:var(--text2);font-weight:600;margin-bottom:4px;display:block;text-transform:uppercase;letter-spacing:.05em}
-.form-input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:6px;font-size:0.88rem;outline:none;transition:border-color .15s}
-.form-input:focus{border-color:var(--accent)}
-.form-input::placeholder{color:var(--text2)}
-textarea.form-input{resize:vertical;line-height:1.85}
-.form-row-2{display:flex;gap:8px;flex-wrap:wrap}
-.form-row-2>div{flex:1;min-width:130px}
-.write-actions{display:flex;gap:8px;margin-top:14px;justify-content:flex-end}
-.btn-save{background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:7px 16px;border-radius:6px;font-size:0.83rem;font-weight:600}
-.btn-pub{background:var(--accent);border:none;color:#000;padding:7px 20px;border-radius:6px;font-size:0.83rem;font-weight:700}
-.btn-pub:hover{background:#00d2a8}
-.wc{font-size:0.73rem;color:var(--text2);text-align:right;margin-top:2px}
-.my-book-row{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;display:flex;align-items:center;gap:10px;margin-bottom:6px}
-.my-book-row-info{flex:1;min-width:0}
-.my-book-row-title{font-size:0.88rem;font-weight:700;color:var(--text)}
-.my-book-row-meta{font-size:0.73rem;color:var(--text2)}
-
-/* ── DASHBOARD ── */
-#dashPage{padding:16px;max-width:900px;margin:0 auto}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:18px}
-.dash-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
-.dash-num{font-size:1.4rem;font-weight:700;color:var(--accent)}
-.dash-label{font-size:0.75rem;color:var(--text2);margin-top:2px}
-.dash-books{display:flex;flex-direction:column;gap:8px}
-.dash-book-row{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s}
-.dash-book-row:hover{background:var(--surface2)}
-.dash-book-title{font-size:0.9rem;font-weight:700;color:var(--text);flex:1}
-.dash-book-stats{font-size:0.75rem;color:var(--text2);display:flex;gap:10px}
-.dash-book-actions{display:flex;gap:6px}
-.btn-edit{background:none;border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:4px;font-size:0.75rem;transition:all .15s}
-.btn-edit:hover{border-color:var(--text3);color:var(--text3)}
-.btn-del{background:none;border:1px solid var(--border);color:var(--text2);padding:4px 8px;border-radius:4px;font-size:0.75rem;transition:all .15s}
-.btn-del:hover{border-color:var(--red);color:var(--red)}
-
-/* ── BOOKMARKS ── */
-#bookmarksPage{padding:16px;max-width:860px;margin:0 auto}
-.continue-banner{background:var(--surface);border:1px solid var(--accent);border-radius:8px;padding:14px 16px;margin-bottom:14px;cursor:pointer;transition:background .15s}
-.continue-banner:hover{background:var(--surface2)}
-.continue-label{font-size:0.72rem;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
-.continue-title{font-size:0.95rem;font-weight:700;color:var(--text)}
-.continue-ch{font-size:0.8rem;color:var(--text2);margin-top:2px}
-
-/* ── AUTH MODAL ── */
-#authModal{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;display:none;align-items:center;justify-content:center}
-#authModal.open{display:flex}
-.auth-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:28px 26px;width:100%;max-width:360px}
-.auth-box h2{font-size:1.05rem;font-weight:700;margin-bottom:16px}
-.auth-tabs{display:flex;gap:2px;margin-bottom:16px;background:var(--surface2);border-radius:6px;padding:3px}
-.auth-tab{flex:1;padding:6px;background:none;border:none;color:var(--text2);font-size:0.82rem;font-weight:600;border-radius:4px;cursor:pointer;transition:all .15s;text-align:center}
-.auth-tab.active{background:var(--surface);color:var(--accent)}
-.auth-field{margin-bottom:10px}
-.auth-field label{font-size:0.75rem;color:var(--text2);font-weight:600;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:.05em}
-.auth-field input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:5px;font-size:0.88rem;outline:none;transition:border-color .15s}
-.auth-field input:focus{border-color:var(--accent)}
-.auth-submit{width:100%;background:var(--accent);border:none;color:#000;padding:9px;border-radius:6px;font-size:0.9rem;font-weight:700;margin-top:6px;cursor:pointer;transition:background .15s}
-.auth-submit:hover{background:#00d2a8}
-.auth-close{float:right;background:none;border:none;color:var(--text2);font-size:1.1rem;cursor:pointer;margin-top:-4px}
-.auth-err{color:var(--red);font-size:0.8rem;margin-top:6px;display:none}
-
-/* ── TOAST ── */
+/* TOAST */
 #toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--surface);border:1px solid var(--accent);color:var(--text);padding:9px 20px;border-radius:8px;font-size:0.85rem;font-weight:500;z-index:9000;transition:transform .25s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,.5)}
 #toast.show{transform:translateX(-50%) translateY(0)}
 
 @media(max-width:600px){
-  .nav-links button{padding:5px 7px;font-size:0.76rem}
+  .nav-links button{padding:5px 8px;font-size:0.78rem}
   .book-card{flex-direction:column}
-  .book-right{flex-direction:row}
-  .read-body{padding:22px 12px 60px}
-  .main-wrap{padding:12px 10px}
+  .book-right{flex-direction:row;align-items:center}
+  .read-body{padding:24px 12px 60px}
 }
 </style>
 </head>
@@ -284,36 +219,12 @@ textarea.form-input{resize:vertical;line-height:1.85}
 <!-- AGE GATE -->
 <div id="ageGate">
   <div class="age-box">
-    <div class="age-icon">🔞</div>
+    <div class="big">🔞</div>
     <h2>Age Verification</h2>
-    <p>This site contains adult content intended for mature audiences only.<br><br>Are you 18 years or older?</p>
+    <p>This site contains adult content for mature audiences only.<br><br>Are you 18 years or older?</p>
     <div class="age-btns">
       <button class="age-yes" id="ageYesBtn">Yes, I'm 18+</button>
       <button class="age-no" id="ageNoBtn">No</button>
-    </div>
-  </div>
-</div>
-
-<!-- AUTH MODAL -->
-<div id="authModal">
-  <div class="auth-box">
-    <button class="auth-close" id="authClose">✕</button>
-    <h2 id="authTitle">Sign In</h2>
-    <div class="auth-tabs">
-      <button class="auth-tab active" id="authTabLogin">Login</button>
-      <button class="auth-tab" id="authTabReg">Register</button>
-    </div>
-    <div id="authLoginForm">
-      <div class="auth-field"><label>Username</label><input type="text" id="loginUser" placeholder="your username"></div>
-      <div class="auth-field"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••"></div>
-      <button class="auth-submit" id="loginBtn">Sign In</button>
-      <div class="auth-err" id="loginErr"></div>
-    </div>
-    <div id="authRegForm" style="display:none">
-      <div class="auth-field"><label>Username</label><input type="text" id="regUser" placeholder="choose a username"></div>
-      <div class="auth-field"><label>Password</label><input type="password" id="regPass" placeholder="••••••••"></div>
-      <button class="auth-submit" id="registerBtn">Create Account</button>
-      <div class="auth-err" id="regErr"></div>
     </div>
   </div>
 </div>
@@ -328,45 +239,22 @@ textarea.form-input{resize:vertical;line-height:1.85}
       <button id="navPopular">📈 Popular</button>
       <button id="navRanking">🏆 Ranking</button>
       <button id="navWrite">✍ Write</button>
-      <button id="navBookmarks">🔖 Bookmarks</button>
-      <button id="navDash" style="display:none">📊 Dashboard</button>
     </div>
-    <div class="topbar-right">
-      <span class="age-badge">18+</span>
-      <button class="user-btn" id="loginNavBtn">Login</button>
-      <div class="user-avatar" id="userAvatar" style="display:none" title="Profile"></div>
-      <button class="user-btn" id="logoutBtn" style="display:none">Logout</button>
-    </div>
+    <span class="age-badge">18+</span>
   </div>
 </div>
 
 <!-- SEARCH -->
 <div class="search-wrap">
-  <div class="search-inner">
-    <input type="text" id="searchInput" placeholder="Search stories, authors...">
-    <select id="filterGenre">
-      <option value="">All Categories</option>
-      <option>Romantic Adult</option>
-      <option>Taboo / Forbidden</option>
-      <option>Affair</option>
-      <option>Psychological</option>
-      <option>Thriller</option>
-      <option>Fantasy Adult</option>
-      <option>Married Life</option>
-      <option>Office Romance</option>
-      <option>Short Story</option>
-    </select>
-    <select id="filterStatus">
-      <option value="">All Status</option>
-      <option>Ongoing</option>
-      <option>Completed</option>
-    </select>
+  <div class="inner">
+    <input type="text" id="searchInput" placeholder="Search stories or authors...">
   </div>
 </div>
 
-<!-- HOME -->
+<!-- ── HOME ── -->
 <div id="homePage" class="page active">
   <div class="main-wrap">
+    <!-- MAIN: BOOKS -->
     <div>
       <div class="tabs">
         <button class="tab active" id="tabNew">🆕 New</button>
@@ -375,81 +263,89 @@ textarea.form-input{resize:vertical;line-height:1.85}
       </div>
       <div id="bookListWrap"></div>
     </div>
+
+    <!-- SIDEBAR -->
     <div class="sidebar">
+      <!-- RANKING -->
       <div class="sidebar-box">
         <div class="sidebar-title">🏆 Top Stories</div>
-        <div id="sideRanking"></div>
+        <div class="rank-list" id="sideRanking"></div>
       </div>
+
+      <!-- LATEST CHAPTERS -->
       <div class="sidebar-box">
         <div class="sidebar-title">🕐 New Chapters</div>
         <div id="sideLatest"></div>
       </div>
+
+      <!-- CATEGORIES -->
       <div class="sidebar-box">
         <div class="sidebar-title">📂 Categories</div>
-        <div id="genrePills"></div>
+        <div class="pill-wrap" id="genrePills"></div>
       </div>
+
+      <!-- TAGS -->
       <div class="sidebar-box">
-        <div class="sidebar-title"># Tags</div>
+        <div class="sidebar-title"># Popular Tags</div>
         <div class="tag-cloud" id="tagCloud"></div>
       </div>
+
+      <!-- STATS -->
       <div class="sidebar-box">
-        <div class="sidebar-title">📊 Site Stats</div>
-        <div class="stat-grid" id="siteStats"></div>
+        <div class="sidebar-title">📊 Stats</div>
+        <div class="stat-grid">
+          <div class="stat-cell"><div class="stat-num">486</div><div class="stat-label">Stories</div></div>
+          <div class="stat-cell"><div class="stat-num">124</div><div class="stat-label">Authors</div></div>
+          <div class="stat-cell"><div class="stat-num">3.2K</div><div class="stat-label">Chapters</div></div>
+          <div class="stat-cell"><div class="stat-num">98K</div><div class="stat-label">Readers</div></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- LATEST -->
+<!-- ── LATEST ── -->
 <div id="latestPage" class="page">
-  <div style="max-width:860px;margin:0 auto;padding:16px">
-    <div style="font-size:0.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px"><span style="width:3px;height:14px;background:var(--accent);border-radius:2px;display:inline-block"></span> Latest Chapter Updates</div>
-    <div class="chapter-feed" id="latestFeed"></div>
+  <div class="main-wrap" style="grid-template-columns:1fr;max-width:860px">
+    <div>
+      <div class="sec-title" style="margin-bottom:12px"><span class="dot"></span> Latest Chapter Updates</div>
+      <div class="chapter-feed" id="latestFeed"></div>
+    </div>
   </div>
 </div>
 
-<!-- POPULAR -->
+<!-- ── POPULAR ── -->
 <div id="popularPage" class="page">
-  <div style="max-width:860px;margin:0 auto;padding:16px">
-    <div style="font-size:0.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px"><span style="width:3px;height:14px;background:var(--accent);border-radius:2px;display:inline-block"></span> Most Popular Stories</div>
-    <div id="popularList"></div>
+  <div class="main-wrap" style="grid-template-columns:1fr;max-width:860px">
+    <div>
+      <div class="sec-title" style="margin-bottom:12px"><span class="dot"></span> Most Popular Stories</div>
+      <div id="popularList"></div>
+    </div>
   </div>
 </div>
 
-<!-- RANKING -->
+<!-- ── RANKING ── -->
 <div id="rankingPage" class="page">
-  <div style="max-width:860px;margin:0 auto;padding:16px">
-    <div class="tabs"><button class="tab active" id="rankTabViews">👁 Views</button><button class="tab" id="rankTabLikes">❤️ Likes</button></div>
-    <div id="rankingList"></div>
+  <div class="main-wrap" style="grid-template-columns:1fr;max-width:860px">
+    <div>
+      <div class="tabs">
+        <button class="tab active" id="rankTabViews">👁 Views</button>
+        <button class="tab" id="rankTabLikes">❤️ Likes</button>
+      </div>
+      <div id="rankingList"></div>
+    </div>
   </div>
 </div>
 
-<!-- BOOKMARKS -->
-<div id="bookmarksPage" class="page">
-  <div style="max-width:860px;margin:0 auto;padding:16px">
-    <div style="font-size:0.88rem;font-weight:700;margin-bottom:12px">🔖 Bookmarks & Reading History</div>
-    <div id="continueReading" style="margin-bottom:14px"></div>
-    <div style="font-size:0.78rem;color:var(--text2);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Saved Books</div>
-    <div id="bookmarkList"></div>
-  </div>
-</div>
-
-<!-- DASHBOARD -->
-<div id="dashPage" class="page">
-  <div class="dash-grid" id="dashStats"></div>
-  <div style="font-size:0.88rem;font-weight:700;margin-bottom:10px">📚 My Books</div>
-  <div class="dash-books" id="dashBooks"></div>
-</div>
-
-<!-- BOOK DETAIL -->
+<!-- ── BOOK DETAIL ── -->
 <div id="bookPage" class="page">
-  <div class="sub-header">
+  <div class="book-detail-header">
     <button class="back-btn" id="backFromBook">← Back</button>
     <h3 id="bookNavTitle"></h3>
   </div>
   <div class="book-detail-body">
     <div class="book-detail-top">
-      <div style="display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap;margin-bottom:5px">
+      <div style="display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-bottom:6px">
         <div class="book-detail-title" id="bdTitle"></div>
         <span class="book-badge badge-genre" id="bdGenre"></span>
         <span class="book-badge" id="bdStatus"></span>
@@ -457,28 +353,20 @@ textarea.form-input{resize:vertical;line-height:1.85}
       <div class="book-detail-meta" id="bdMeta"></div>
       <div class="book-detail-synopsis" id="bdSynopsis"></div>
       <div class="book-detail-tags" id="bdTags"></div>
-      <div class="book-detail-actions">
-        <button class="btn btn-primary" id="startReadBtn">▶ Start Reading</button>
-        <button class="btn btn-secondary" id="bookmarkBookBtn">🔖 Bookmark</button>
-        <button class="btn btn-like" id="likeBookBtn">❤️ Like</button>
-        <button class="btn btn-follow" id="followAuthorBtn">+ Follow Author</button>
-      </div>
     </div>
-    <div class="chapter-list-hd"><span id="bdChCount"></span></div>
+    <div class="chapter-list-title">
+      <span id="bdChCount"></span>
+      <button class="read-btn-sm" id="startReadBtn" style="padding:5px 14px;font-size:0.82rem">▶ Start Reading</button>
+    </div>
     <div class="chapter-rows" id="chapterRows"></div>
   </div>
 </div>
 
-<!-- READ PAGE -->
+<!-- ── READ PAGE ── -->
 <div id="readPage" class="page">
-  <div class="read-progress"><div class="read-progress-bar" id="progressBar"></div></div>
   <div class="read-topbar">
-    <button class="back-btn" id="backFromRead">← Book</button>
+    <button class="back-btn" id="backFromRead">← Back to Book</button>
     <h3 id="readNavTitle"></h3>
-    <div class="read-controls">
-      <button class="font-btn" id="fontDec">A-</button>
-      <button class="font-btn" id="fontInc">A+</button>
-    </div>
   </div>
   <div class="read-body">
     <span class="read-book-name" id="readBookName"></span>
@@ -489,52 +377,82 @@ textarea.form-input{resize:vertical;line-height:1.85}
       <button id="nextChBtn">Next →</button>
     </div>
     <div class="ch-nav-info" id="chNavInfo"></div>
-    <div class="comments-section">
-      <div class="comments-title" id="commentsTitle">💬 Comments</div>
-      <div class="comment-form" id="commentFormWrap">
-        <input type="text" id="commentInput" placeholder="Write a comment...">
-        <button id="commentSubmit">Post</button>
-      </div>
-      <div class="comment-list" id="commentList"></div>
-    </div>
   </div>
 </div>
 
-<!-- WRITE PAGE -->
+<!-- ── WRITE PAGE ── -->
 <div id="writePage" class="page">
   <div class="write-tabs">
     <button class="write-tab active" id="wtabNew">📖 New Book</button>
     <button class="write-tab" id="wtabChapter">✍ Add Chapter</button>
-    <button class="write-tab" id="wtabMyBooks">📚 My Books</button>
   </div>
+
+  <!-- NEW BOOK FORM -->
   <div id="newBookForm" class="write-card">
     <h2>📖 Publish a New Book</h2>
-    <div class="form-row"><label class="form-label">Book Title</label><input class="form-input" type="text" id="wTitle" placeholder="Enter your book title..."></div>
-    <div class="form-row"><label class="form-label">Synopsis</label><textarea class="form-input" id="wSynopsis" style="min-height:70px" placeholder="Describe your story..."></textarea></div>
+    <div class="form-row">
+      <label class="form-label">Book Title</label>
+      <input class="form-input" type="text" id="wTitle" placeholder="Enter your book title...">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Short Synopsis</label>
+      <textarea class="form-input" id="wSynopsis" style="min-height:80px" placeholder="Describe your story in 2-3 lines..."></textarea>
+    </div>
     <div class="form-row form-row-2">
-      <div><label class="form-label">Category</label>
+      <div>
+        <label class="form-label">Category</label>
         <select class="form-input" id="wGenre">
           <option value="">Select</option>
-          <option>Romantic Adult</option><option>Taboo / Forbidden</option><option>Affair</option>
-          <option>Psychological</option><option>Thriller</option><option>Fantasy Adult</option>
-          <option>Married Life</option><option>Office Romance</option><option>Short Story</option>
+          <option>Romantic Adult</option>
+          <option>Taboo / Forbidden</option>
+          <option>Affair</option>
+          <option>Psychological</option>
+          <option>Thriller</option>
+          <option>Fantasy Adult</option>
+          <option>Married Life</option>
+          <option>Office Romance</option>
+          <option>Short Story</option>
         </select>
       </div>
-      <div><label class="form-label">Tags (comma separated)</label><input class="form-input" type="text" id="wTags" placeholder="romance, drama"></div>
+      <div>
+        <label class="form-label">Tags (comma separated)</label>
+        <input class="form-input" type="text" id="wTags" placeholder="romance, drama, suspense">
+      </div>
     </div>
-    <div class="form-row"><label class="form-label">First Chapter Title</label><input class="form-input" type="text" id="wChTitle" placeholder="Chapter 1: ..."></div>
-    <div class="form-row"><label class="form-label">Chapter Content</label><textarea class="form-input" id="wContent" style="min-height:280px" placeholder="Write your first chapter..."></textarea><div class="wc" id="wcDisplay">0 words</div></div>
-    <div class="write-actions"><button class="btn-save" id="saveDraftBtn">💾 Save Draft</button><button class="btn-pub" id="publishBookBtn">🚀 Publish</button></div>
+    <div class="form-row">
+      <label class="form-label">First Chapter Title</label>
+      <input class="form-input" type="text" id="wChTitle" placeholder="Chapter 1: ...">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Chapter Content</label>
+      <textarea class="form-input" id="wContent" placeholder="Write your first chapter here..."></textarea>
+      <div class="wc" id="wcDisplay">0 words</div>
+    </div>
+    <div class="write-actions">
+      <button class="btn-save" id="saveDraftBtn">💾 Save Draft</button>
+      <button class="btn-pub" id="publishBookBtn">🚀 Publish Book</button>
+    </div>
   </div>
+
+  <!-- ADD CHAPTER FORM -->
   <div id="addChapterForm" class="write-card" style="display:none">
-    <h2>✍ Add Chapter</h2>
-    <div class="form-row"><label class="form-label">Book</label><select class="form-input" id="wSelectBook"></select></div>
-    <div class="form-row"><label class="form-label">Chapter Title</label><input class="form-input" type="text" id="wNewChTitle" placeholder="Chapter 2: ..."></div>
-    <div class="form-row"><label class="form-label">Content</label><textarea class="form-input" id="wNewChContent" style="min-height:280px" placeholder="Continue the story..."></textarea><div class="wc" id="wcDisplay2">0 words</div></div>
-    <div class="write-actions"><button class="btn-pub" id="addChapterBtn">➕ Add Chapter</button></div>
-  </div>
-  <div id="myBooksForm" style="display:none">
-    <div id="myBooksListWrap"></div>
+    <h2>✍ Add Chapter to Existing Book</h2>
+    <div class="form-row">
+      <label class="form-label">Select Book</label>
+      <select class="form-input" id="wSelectBook"></select>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Chapter Title</label>
+      <input class="form-input" type="text" id="wNewChTitle" placeholder="Chapter 2: ...">
+    </div>
+    <div class="form-row">
+      <label class="form-label">Chapter Content</label>
+      <textarea class="form-input" id="wNewChContent" placeholder="Continue your story..."></textarea>
+      <div class="wc" id="wcDisplay2">0 words</div>
+    </div>
+    <div class="write-actions">
+      <button class="btn-pub" id="addChapterBtn">➕ Add Chapter</button>
+    </div>
   </div>
 </div>
 
@@ -543,17 +461,12 @@ textarea.form-input{resize:vertical;line-height:1.85}
 <script>
 (function(){
 
-// ── STORAGE HELPERS ───────────────────────────────────────────────
-function load(key, def){ try{ var v=localStorage.getItem(key); return v?JSON.parse(v):def; }catch(e){ return def; } }
-function save(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
-
-// ── INITIAL DATA ──────────────────────────────────────────────────
-var DEFAULT_BOOKS = [
+var books = [
   {
     id:1, title:"Rater Gopon Kotha", author:"Unknown Writer", genre:"Taboo / Forbidden",
     tags:["forbidden","drama","emotion"], views:12400, likes:843, status:"Ongoing",
-    date:"Mar 3, 2024", ownerId:null,
-    synopsis:"Hidden words in the dark of night — a forbidden relationship where every moment is dangerous.",
+    date:"Mar 3, 2024",
+    synopsis:"Hidden words in the dark of night — a forbidden relationship where every moment is dangerous and every touch carries consequences.",
     chapters:[
       {title:"Chapter 1: The First Meeting", date:"Jan 5, 2024", content:`It was deep night. The city lights were going out one by one. Rima stood by the window, sleep far from her eyes.
 
@@ -589,8 +502,8 @@ No more words. Only silence — and in that silence, the inevitable fall of two 
   {
     id:2, title:"Nishiddho Shomporko", author:"Pen Thief", genre:"Affair",
     tags:["affair","romance","suspense"], views:9100, likes:632, status:"Ongoing",
-    date:"Feb 3, 2024", ownerId:null,
-    synopsis:"When an old lover returns five years after marriage — the war inside the heart is one nobody can see.",
+    date:"Feb 3, 2024",
+    synopsis:"When an old lover returns five years after marriage — the war inside the heart is one nobody else can see.",
     chapters:[
       {title:"Chapter 1: An Old Face", date:"Dec 10, 2023", content:`Five years. Nadia had believed it was all over.
 
@@ -607,7 +520,7 @@ Hearing that voice, Nadia froze. Five years of husband, home, life — all washe
 
 "Good," Nadia said.
 
-As she said that one word she wondered — what does good really mean? Everything is there. Yet there is an emptiness. Was that emptiness named Rohan?`},
+As she said that one word, she wondered — what does good really mean? Everything is there. Yet there is an emptiness. Was that emptiness named Rohan?`},
       {title:"Chapter 3: Crossing the Line", date:"Feb 3, 2024", content:`After the third meeting Nadia understood — this was not a coincidence.
 
 Rohan had found her.
@@ -620,14 +533,14 @@ Nadia said nothing. Because the true answer cannot be spoken — and the false o
   {
     id:3, title:"Muktir Shondhaney", author:"Shameless", genre:"Psychological",
     tags:["psychological","mystery","mature"], views:7800, likes:514, status:"Completed",
-    date:"Jan 17, 2024", ownerId:null,
+    date:"Jan 17, 2024",
     synopsis:"When a person tries to escape the darkness inside themselves — who can they trust?",
     chapters:[
       {title:"Chapter 1: The Start of Darkness", date:"Nov 5, 2023", content:`The doctor said, "You need to talk."
 
 Adnan stayed silent.
 
-How long had he gone without talking — it was impossible to count. Talking to people means opening yourself up.
+How long had he gone without talking — it was impossible to count. Talking to people means opening yourself up. And he cannot do that.
 
 But the girl sitting beside the doctor — her eyes hold no judgment. Only questions.
 
@@ -638,7 +551,7 @@ Adnan opened his mouth.`},
 
 Adnan did not say it. But the images came inside his head. That childhood home, those stairs, that dark room.
 
-The girl — her name was Sima — was listening in silence.
+The girl — her name was Sima — was listening in silence. Nodding occasionally.
 
 This quiet attention made Adnan uneasy. Nobody had ever listened this way.`},
       {title:"Chapter 3: The Way Out", date:"Jan 17, 2024", content:`A few weeks later Adnan realized — he was not coming only for therapy anymore.
@@ -651,7 +564,7 @@ This is not right. He knows. But how long can reason hold against feeling?`}
   {
     id:4, title:"Office Er Vitore Agun", author:"City Writer", genre:"Office Romance",
     tags:["office","intense","love"], views:11200, likes:776, status:"Ongoing",
-    date:"Apr 1, 2024", ownerId:null,
+    date:"Apr 1, 2024",
     synopsis:"An invisible pull between boss and employee — when professionalism and emotion meet in the same place.",
     chapters:[
       {title:"Chapter 1: The First Day", date:"Jan 20, 2024", content:`On the very first day, Sir Tanvir threw down the file and said, "Do this again."
@@ -686,7 +599,7 @@ Mausumi kept her eyes on the coffee cup. Something stirred inside her chest.`}
   {
     id:5, title:"Dampotyoer Gopon Khela", author:"Griholakkhmi", genre:"Married Life",
     tags:["married","family","romance"], views:6300, likes:438, status:"Ongoing",
-    date:"Mar 15, 2024", ownerId:null,
+    date:"Mar 15, 2024",
     synopsis:"After ten years of marriage, a husband and wife rediscover each other in an unexpected way.",
     chapters:[
       {title:"Chapter 1: A New Beginning", date:"Mar 15, 2024", content:`What can be new after ten years together?
@@ -706,46 +619,24 @@ Hearing those words, something stirred inside Shirin's chest — something that 
   }
 ];
 
-var DEFAULT_COMMENTS = {};
-var DEFAULT_USERS = {};
-
-// ── STATE ─────────────────────────────────────────────────────────
-var books = load("bss_books", null);
-if (!books || books.length === 0) { books = DEFAULT_BOOKS; save("bss_books", books); }
-var users = load("bss_users", DEFAULT_USERS);
-var comments = load("bss_comments", DEFAULT_COMMENTS);
-var currentUser = load("bss_currentUser", null);
-var bookmarks = load("bss_bookmarks", {});
-var readHistory = load("bss_readHistory", {});
-var likedBooks = load("bss_likedBooks", {});
-var followedAuthors = load("bss_followed", {});
-var fontSize = load("bss_fontSize", 16);
+var genres = ["All","Romantic Adult","Taboo / Forbidden","Affair","Psychological","Thriller","Fantasy Adult","Married Life","Office Romance","Short Story"];
+var tagsList = ["romance","drama","suspense","love","forbidden","affair","office","married","emotion","mystery","mature","intense"];
 
 var currentBook = null;
 var currentChIdx = 0;
 var prevPageId = "homePage";
-var genres = ["Romantic Adult","Taboo / Forbidden","Affair","Psychological","Thriller","Fantasy Adult","Married Life","Office Romance","Short Story"];
-var tagsList = ["romance","drama","suspense","love","forbidden","affair","office","married","emotion","mystery","mature","intense"];
+var currentPageId = "homePage";
 
-// ── APPLY FONT SIZE ───────────────────────────────────────────────
-document.documentElement.style.setProperty("--fs", fontSize+"px");
-
-// ── AGE GATE ──────────────────────────────────────────────────────
-if (load("bss_ageOk", false)) {
+// AGE GATE
+document.getElementById("ageYesBtn").addEventListener("click", function(){
   document.getElementById("ageGate").style.display = "none";
   init();
-} else {
-  document.getElementById("ageYesBtn").addEventListener("click", function(){
-    save("bss_ageOk", true);
-    document.getElementById("ageGate").style.display = "none";
-    init();
-  });
-  document.getElementById("ageNoBtn").addEventListener("click", function(){ window.location.href="https://google.com"; });
-}
+});
+document.getElementById("ageNoBtn").addEventListener("click", function(){
+  window.location.href = "https://google.com";
+});
 
-// ── INIT ──────────────────────────────────────────────────────────
 function init(){
-  updateAuthUI();
   renderBookList(books, "bookListWrap");
   renderGenres();
   renderTags();
@@ -754,252 +645,133 @@ function init(){
   renderLatestFeed();
   renderPopular();
   renderRanking("views");
-  renderSiteStats();
   bindNav();
   bindTabs();
   bindWrite();
-  bindAuth();
-  bindSearch();
-  bindFontControls();
-  bindReadProgress();
+  document.getElementById("searchInput").addEventListener("input", handleSearch);
 }
 
-// ── AUTH ──────────────────────────────────────────────────────────
-function bindAuth(){
-  document.getElementById("loginNavBtn").addEventListener("click", function(){ document.getElementById("authModal").classList.add("open"); });
-  document.getElementById("authClose").addEventListener("click", function(){ document.getElementById("authModal").classList.remove("open"); });
-  document.getElementById("authTabLogin").addEventListener("click", function(){
-    this.classList.add("active"); document.getElementById("authTabReg").classList.remove("active");
-    document.getElementById("authLoginForm").style.display="block"; document.getElementById("authRegForm").style.display="none";
-  });
-  document.getElementById("authTabReg").addEventListener("click", function(){
-    this.classList.add("active"); document.getElementById("authTabLogin").classList.remove("active");
-    document.getElementById("authRegForm").style.display="block"; document.getElementById("authLoginForm").style.display="none";
-  });
-  document.getElementById("loginBtn").addEventListener("click", doLogin);
-  document.getElementById("registerBtn").addEventListener("click", doRegister);
-  document.getElementById("logoutBtn").addEventListener("click", doLogout);
-  document.getElementById("userAvatar").addEventListener("click", function(){ showPage("dashPage", null); renderDashboard(); });
-  document.getElementById("authModal").addEventListener("click", function(e){ if(e.target===this) this.classList.remove("open"); });
-}
-
-function doLogin(){
-  var u = document.getElementById("loginUser").value.trim();
-  var p = document.getElementById("loginPass").value;
-  if(!u||!p){ showAuthErr("loginErr","Fill all fields."); return; }
-  if(!users[u] || users[u].pass !== p){ showAuthErr("loginErr","Wrong username or password."); return; }
-  currentUser = {username:u};
-  save("bss_currentUser", currentUser);
-  document.getElementById("authModal").classList.remove("open");
-  updateAuthUI();
-  showToast("Welcome back, "+u+"!");
-}
-
-function doRegister(){
-  var u = document.getElementById("regUser").value.trim();
-  var p = document.getElementById("regPass").value;
-  if(!u||!p){ showAuthErr("regErr","Fill all fields."); return; }
-  if(u.length < 3){ showAuthErr("regErr","Username must be at least 3 characters."); return; }
-  if(users[u]){ showAuthErr("regErr","Username already taken."); return; }
-  users[u] = {pass:p, joined: new Date().toLocaleDateString()};
-  save("bss_users", users);
-  currentUser = {username:u};
-  save("bss_currentUser", currentUser);
-  document.getElementById("authModal").classList.remove("open");
-  updateAuthUI();
-  showToast("Account created! Welcome, "+u+"!");
-}
-
-function doLogout(){
-  currentUser = null;
-  save("bss_currentUser", null);
-  updateAuthUI();
-  showPage("homePage", document.getElementById("navHome"));
-  showToast("Logged out.");
-}
-
-function showAuthErr(id, msg){
-  var el = document.getElementById(id);
-  el.textContent = msg; el.style.display = "block";
-  setTimeout(function(){ el.style.display="none"; }, 3000);
-}
-
-function updateAuthUI(){
-  var loggedIn = !!currentUser;
-  document.getElementById("loginNavBtn").style.display = loggedIn ? "none" : "block";
-  document.getElementById("logoutBtn").style.display = loggedIn ? "block" : "none";
-  document.getElementById("userAvatar").style.display = loggedIn ? "flex" : "none";
-  document.getElementById("navDash").style.display = loggedIn ? "block" : "none";
-  if(loggedIn){
-    document.getElementById("userAvatar").textContent = currentUser.username.charAt(0).toUpperCase();
-  }
-}
-
-// ── NAV ───────────────────────────────────────────────────────────
+// NAV
 function bindNav(){
-  var navMap = {navHome:"homePage",navLatest:"latestPage",navPopular:"popularPage",navRanking:"rankingPage",navWrite:"writePage",navBookmarks:"bookmarksPage",navDash:"dashPage"};
-  Object.keys(navMap).forEach(function(id){
-    document.getElementById(id).addEventListener("click", function(){
-      if(id==="navWrite" && !currentUser){ showToast("Please login to write."); document.getElementById("authModal").classList.add("open"); return; }
-      if(id==="navDash" && !currentUser){ showToast("Please login first."); return; }
-      if(id==="navBookmarks") renderBookmarks();
-      if(id==="navDash") renderDashboard();
-      if(id==="navWrite") populateBookSelect();
-      showPage(navMap[id], this);
-    });
-  });
-  document.getElementById("backFromBook").addEventListener("click", function(){ showPage(prevPageId, getNavBtn(prevPageId)); });
-  document.getElementById("backFromRead").addEventListener("click", function(){ openBookDetail(currentBook.id); });
+  document.getElementById("navHome").addEventListener("click", function(){ showPage("homePage", this); });
+  document.getElementById("navLatest").addEventListener("click", function(){ showPage("latestPage", this); });
+  document.getElementById("navPopular").addEventListener("click", function(){ showPage("popularPage", this); });
+  document.getElementById("navRanking").addEventListener("click", function(){ showPage("rankingPage", this); });
+  document.getElementById("navWrite").addEventListener("click", function(){ showPage("writePage", this); populateBookSelect(); });
+  document.getElementById("backFromBook").addEventListener("click", goBackFromBook);
+  document.getElementById("backFromRead").addEventListener("click", function(){ showPage("bookPage", null); openBookDetail(currentBook.id); });
   document.getElementById("prevChBtn").addEventListener("click", prevChapter);
   document.getElementById("nextChBtn").addEventListener("click", nextChapter);
   document.getElementById("startReadBtn").addEventListener("click", function(){ openChapter(currentBook.id, 0); });
 }
 
-function getNavBtn(pageId){
-  var map = {homePage:"navHome",latestPage:"navLatest",popularPage:"navPopular",rankingPage:"navRanking",writePage:"navWrite",bookmarksPage:"navBookmarks",dashPage:"navDash"};
-  return document.getElementById(map[pageId]||"navHome");
-}
-
 function showPage(pageId, btn){
-  if(!["readPage","bookPage"].includes(pageId)){ prevPageId = pageId; }
-  ["homePage","latestPage","popularPage","rankingPage","writePage","bookmarksPage","dashPage","bookPage","readPage"].forEach(function(id){
-    var el=document.getElementById(id); if(el) el.classList.remove("active");
+  if (pageId !== "readPage" && pageId !== "bookPage") {
+    prevPageId = pageId;
+  }
+  currentPageId = pageId;
+  ["homePage","latestPage","popularPage","rankingPage","writePage","bookPage","readPage"].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.classList.remove("active");
   });
   document.getElementById(pageId).classList.add("active");
-  if(btn){ document.querySelectorAll(".nav-links button").forEach(function(b){ b.classList.remove("active"); }); btn.classList.add("active"); }
+  if (btn) {
+    document.querySelectorAll(".nav-links button").forEach(function(b){ b.classList.remove("active"); });
+    btn.classList.add("active");
+  }
   window.scrollTo(0,0);
 }
 
-// ── TABS ──────────────────────────────────────────────────────────
+function goBackFromBook(){
+  showPage(prevPageId, document.getElementById(
+    prevPageId === "homePage" ? "navHome" :
+    prevPageId === "latestPage" ? "navLatest" :
+    prevPageId === "popularPage" ? "navPopular" :
+    prevPageId === "rankingPage" ? "navRanking" : "navHome"
+  ));
+}
+
+// TABS
 function bindTabs(){
-  document.getElementById("tabNew").addEventListener("click", function(){ setTab(this,["tabNew","tabHot","tabCompleted"]); renderBookList(books,"bookListWrap"); });
-  document.getElementById("tabHot").addEventListener("click", function(){ setTab(this,["tabNew","tabHot","tabCompleted"]); renderBookList(books.slice().sort(function(a,b){return b.views-a.views;}), "bookListWrap"); });
-  document.getElementById("tabCompleted").addEventListener("click", function(){ setTab(this,["tabNew","tabHot","tabCompleted"]); renderBookList(books.filter(function(b){return b.status==="Completed";}), "bookListWrap"); });
-  document.getElementById("rankTabViews").addEventListener("click", function(){ setTab(this,["rankTabViews","rankTabLikes"]); renderRanking("views"); });
-  document.getElementById("rankTabLikes").addEventListener("click", function(){ setTab(this,["rankTabViews","rankTabLikes"]); renderRanking("likes"); });
-}
-function setTab(el,ids){ ids.forEach(function(id){ document.getElementById(id).classList.remove("active"); }); el.classList.add("active"); }
-
-// ── SEARCH & FILTER ───────────────────────────────────────────────
-function bindSearch(){
-  document.getElementById("searchInput").addEventListener("input", applyFilters);
-  document.getElementById("filterGenre").addEventListener("change", applyFilters);
-  document.getElementById("filterStatus").addEventListener("change", applyFilters);
-}
-function applyFilters(){
-  var q = document.getElementById("searchInput").value.trim().toLowerCase();
-  var g = document.getElementById("filterGenre").value;
-  var s = document.getElementById("filterStatus").value;
-  var r = books.filter(function(b){
-    var matchQ = !q || b.title.toLowerCase().indexOf(q)>-1 || b.author.toLowerCase().indexOf(q)>-1 || b.synopsis.toLowerCase().indexOf(q)>-1;
-    var matchG = !g || b.genre === g;
-    var matchS = !s || b.status === s;
-    return matchQ && matchG && matchS;
+  document.getElementById("tabNew").addEventListener("click", function(){
+    setTabActive(this, ["tabNew","tabHot","tabCompleted"]);
+    renderBookList(books, "bookListWrap");
   });
-  renderBookList(r, "bookListWrap");
-  showPage("homePage", document.getElementById("navHome"));
+  document.getElementById("tabHot").addEventListener("click", function(){
+    setTabActive(this, ["tabNew","tabHot","tabCompleted"]);
+    renderBookList(books.slice().sort(function(a,b){return b.views-a.views;}), "bookListWrap");
+  });
+  document.getElementById("tabCompleted").addEventListener("click", function(){
+    setTabActive(this, ["tabNew","tabHot","tabCompleted"]);
+    renderBookList(books.filter(function(b){return b.status==="Completed";}), "bookListWrap");
+  });
+  document.getElementById("rankTabViews").addEventListener("click", function(){
+    setTabActive(this, ["rankTabViews","rankTabLikes"]);
+    renderRanking("views");
+  });
+  document.getElementById("rankTabLikes").addEventListener("click", function(){
+    setTabActive(this, ["rankTabViews","rankTabLikes"]);
+    renderRanking("likes");
+  });
 }
 
-// ── RENDER BOOKS ──────────────────────────────────────────────────
-function fmtV(n){ return n>=1000?(n/1000).toFixed(1)+"K":String(n); }
-function pad2(n){ return n<10?"0"+n:String(n); }
+function setTabActive(el, ids){
+  ids.forEach(function(id){ document.getElementById(id).classList.remove("active"); });
+  el.classList.add("active");
+}
+
+// RENDER BOOK LIST
+function fmtViews(n){ return n >= 1000 ? (n/1000).toFixed(1)+"K" : String(n); }
 
 function renderBookList(list, containerId){
   var el = document.getElementById(containerId);
-  if(!el) return;
-  if(!list||!list.length){ el.innerHTML='<div style="color:var(--text2);padding:20px;text-align:center">No stories found.</div>'; return; }
+  if (!list.length){ el.innerHTML = '<div style="color:var(--text2);padding:20px;text-align:center">No stories found.</div>'; return; }
   var html = '<div class="book-list">';
-  list.forEach(function(b,i){
-    var isBm = bookmarks[b.id] ? "saved" : "";
+  list.forEach(function(b, i){
     var tagHtml = b.tags.slice(0,3).map(function(t){ return '<span class="book-tag">#'+t+'</span>'; }).join("");
-    var sCls = b.status==="Completed"?"badge-done":"badge-ongoing";
+    var statusCls = b.status === "Completed" ? "badge-done" : "badge-ongoing";
     html += '<div class="book-card" data-id="'+b.id+'">' +
       '<div class="book-num">'+(i+1)+'</div>' +
       '<div class="book-info">' +
         '<div class="book-title">'+b.title+'</div>' +
-        '<div class="book-meta"><span>✍ '+b.author+'</span><span>👁 '+fmtV(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📚 '+b.chapters.length+' ch</span><span>📅 '+b.date+'</span></div>' +
+        '<div class="book-meta"><span>✍ '+b.author+'</span><span>👁 '+fmtViews(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📚 '+b.chapters.length+' ch</span><span>📅 '+b.date+'</span></div>' +
         '<div class="book-synopsis">'+b.synopsis+'</div>' +
         '<div class="book-tags">'+tagHtml+'</div>' +
       '</div>' +
-      '<div class="book-right">' +
-        '<span class="book-badge badge-genre">'+b.genre+'</span>' +
-        '<span class="book-badge '+sCls+'">'+b.status+'</span>' +
-        '<button class="bm-icon '+isBm+'" data-bm="'+b.id+'" title="Bookmark">🔖</button>' +
-      '</div></div>';
+      '<div class="book-right"><span class="book-badge badge-genre">'+b.genre+'</span><span class="book-badge '+statusCls+'">'+b.status+'</span></div>' +
+      '</div>';
   });
   html += '</div>';
   el.innerHTML = html;
   el.querySelectorAll(".book-card").forEach(function(card){
-    card.addEventListener("click", function(e){
-      if(e.target.classList.contains("bm-icon")||e.target.closest(".bm-icon")) return;
-      openBookDetail(parseInt(this.getAttribute("data-id")));
-    });
-  });
-  el.querySelectorAll(".bm-icon").forEach(function(btn){
-    btn.addEventListener("click", function(e){ e.stopPropagation(); toggleBookmark(parseInt(this.getAttribute("data-bm")), this); });
+    card.addEventListener("click", function(){ openBookDetail(parseInt(this.getAttribute("data-id"))); });
   });
 }
 
-// ── BOOK DETAIL ───────────────────────────────────────────────────
+// BOOK DETAIL
 function openBookDetail(id){
-  var b = books.find(function(x){ return x.id===id; });
-  if(!b) return;
+  var b = books.find(function(x){ return x.id === id; });
+  if (!b) return;
   currentBook = b;
-  b.views++;
-  save("bss_books", books);
   document.getElementById("bookNavTitle").textContent = b.title;
   document.getElementById("bdTitle").textContent = b.title;
   document.getElementById("bdGenre").textContent = b.genre;
-  var sEl = document.getElementById("bdStatus");
-  sEl.textContent = b.status;
-  sEl.className = "book-badge "+(b.status==="Completed"?"badge-done":"badge-ongoing");
-  document.getElementById("bdMeta").innerHTML = '<span>✍ '+b.author+'</span><span>👁 '+fmtV(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📅 '+b.date+'</span>';
+  var statusEl = document.getElementById("bdStatus");
+  statusEl.textContent = b.status;
+  statusEl.className = "book-badge " + (b.status === "Completed" ? "badge-done" : "badge-ongoing");
+  document.getElementById("bdMeta").innerHTML = '<span>✍ '+b.author+'</span><span>👁 '+fmtViews(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📅 '+b.date+'</span>';
   document.getElementById("bdSynopsis").textContent = b.synopsis;
   document.getElementById("bdTags").innerHTML = b.tags.map(function(t){ return '<span class="book-tag">#'+t+'</span>'; }).join("");
-  document.getElementById("bdChCount").textContent = b.chapters.length+" Chapters";
+  document.getElementById("bdChCount").textContent = b.chapters.length + " Chapters";
 
-  // bookmark btn
-  var bmBtn = document.getElementById("bookmarkBookBtn");
-  bmBtn.textContent = bookmarks[b.id] ? "🔖 Bookmarked" : "🔖 Bookmark";
-  bmBtn.onclick = function(){ toggleBookmark(b.id, null); bmBtn.textContent = bookmarks[b.id]?"🔖 Bookmarked":"🔖 Bookmark"; };
-
-  // like btn
-  var likeBtn = document.getElementById("likeBookBtn");
-  likeBtn.textContent = "❤️ "+b.likes;
-  likeBtn.className = "btn btn-like"+(likedBooks[b.id]?" liked":"");
-  likeBtn.onclick = function(){
-    if(!currentUser){ showToast("Login to like."); return; }
-    if(likedBooks[b.id]){ b.likes--; delete likedBooks[b.id]; }
-    else { b.likes++; likedBooks[b.id]=true; }
-    save("bss_likedBooks", likedBooks); save("bss_books", books);
-    likeBtn.textContent = "❤️ "+b.likes;
-    likeBtn.className = "btn btn-like"+(likedBooks[b.id]?" liked":"");
-  };
-
-  // follow btn
-  var followBtn = document.getElementById("followAuthorBtn");
-  followBtn.textContent = followedAuthors[b.author] ? "✓ Following" : "+ Follow Author";
-  followBtn.className = "btn btn-follow"+(followedAuthors[b.author]?" following":"");
-  followBtn.onclick = function(){
-    if(!currentUser){ showToast("Login to follow."); return; }
-    if(followedAuthors[b.author]){ delete followedAuthors[b.author]; showToast("Unfollowed "+b.author); }
-    else { followedAuthors[b.author]=true; showToast("Following "+b.author+"!"); }
-    save("bss_followed", followedAuthors);
-    followBtn.textContent = followedAuthors[b.author]?"✓ Following":"+ Follow Author";
-    followBtn.className = "btn btn-follow"+(followedAuthors[b.author]?" following":"");
-  };
-
-  // chapter list
-  var lastRead = readHistory[b.id];
   var rowsHtml = "";
-  b.chapters.forEach(function(ch,i){
-    var done = lastRead !== undefined && i <= lastRead ? '<span class="ch-row-done">✓</span>' : '';
-    rowsHtml += '<div class="chapter-row" data-idx="'+i+'">'+
-      '<span class="ch-num">'+pad2(i+1)+'</span>'+
-      '<span class="ch-row-title">'+ch.title+'</span>'+
-      '<span class="ch-date">'+ch.date+'</span>'+
-      done+
-      '<button class="read-sm">Read</button></div>';
+  b.chapters.forEach(function(ch, i){
+    rowsHtml += '<div class="chapter-row" data-idx="'+i+'">' +
+      '<span class="ch-num">'+pad(i+1)+'</span>' +
+      '<span class="ch-title">'+ch.title+'</span>' +
+      '<span class="ch-date">'+ch.date+'</span>' +
+      '<button class="read-btn-sm">Read</button>' +
+      '</div>';
   });
   document.getElementById("chapterRows").innerHTML = rowsHtml;
   document.querySelectorAll(".chapter-row").forEach(function(row){
@@ -1009,158 +781,244 @@ function openBookDetail(id){
   showPage("bookPage", null);
 }
 
-// ── READ ──────────────────────────────────────────────────────────
+function pad(n){ return n < 10 ? "0"+n : String(n); }
+
+// READ CHAPTER
 function openChapter(bookId, chIdx){
-  var b = books.find(function(x){ return x.id===bookId; });
-  if(!b) return;
-  currentBook = b; currentChIdx = chIdx;
+  var b = books.find(function(x){ return x.id === bookId; });
+  if (!b) return;
+  currentBook = b;
+  currentChIdx = chIdx;
   var ch = b.chapters[chIdx];
-  document.getElementById("readNavTitle").textContent = b.title+" — "+ch.title;
+  document.getElementById("readNavTitle").textContent = b.title;
   document.getElementById("readBookName").textContent = b.title;
   document.getElementById("readChTitle").textContent = ch.title;
-  document.getElementById("readContent").innerHTML = ch.content.split("\n\n").map(function(p){ return "<p>"+p+"</p>"; }).join("");
-  document.getElementById("chNavInfo").textContent = "Chapter "+(chIdx+1)+" of "+b.chapters.length;
-  document.getElementById("progressBar").style.width = "0%";
-
-  // update read history
-  if(!readHistory[bookId] || chIdx > readHistory[bookId]){ readHistory[bookId] = chIdx; save("bss_readHistory", readHistory); }
-
-  // comments
-  renderComments(bookId, chIdx);
+  var paras = ch.content.split("\n\n").map(function(p){ return "<p>"+p+"</p>"; }).join("");
+  document.getElementById("readContent").innerHTML = paras;
+  document.getElementById("chNavInfo").textContent = "Chapter " + (chIdx+1) + " of " + b.chapters.length;
   showPage("readPage", null);
 }
 
-function prevChapter(){ if(!currentBook||currentChIdx<=0){ showToast("First chapter."); return; } openChapter(currentBook.id, currentChIdx-1); }
-function nextChapter(){ if(!currentBook||currentChIdx>=currentBook.chapters.length-1){ showToast("No new chapter yet."); return; } openChapter(currentBook.id, currentChIdx+1); }
-
-// ── READING PROGRESS BAR ──────────────────────────────────────────
-function bindReadProgress(){
-  window.addEventListener("scroll", function(){
-    var el = document.getElementById("readPage");
-    if(!el.classList.contains("active")) return;
-    var scrolled = window.scrollY;
-    var total = document.body.scrollHeight - window.innerHeight;
-    var pct = total > 0 ? Math.min(100, (scrolled/total)*100) : 0;
-    document.getElementById("progressBar").style.width = pct+"%";
-  });
+function prevChapter(){
+  if (!currentBook || currentChIdx <= 0){ showToast("This is the first chapter."); return; }
+  openChapter(currentBook.id, currentChIdx - 1);
 }
 
-// ── FONT SIZE ─────────────────────────────────────────────────────
-function bindFontControls(){
-  document.getElementById("fontInc").addEventListener("click", function(){
-    if(fontSize>=22) return;
-    fontSize += 2; save("bss_fontSize", fontSize);
-    document.documentElement.style.setProperty("--fs", fontSize+"px");
-  });
-  document.getElementById("fontDec").addEventListener("click", function(){
-    if(fontSize<=12) return;
-    fontSize -= 2; save("bss_fontSize", fontSize);
-    document.documentElement.style.setProperty("--fs", fontSize+"px");
-  });
+function nextChapter(){
+  if (!currentBook || currentChIdx >= currentBook.chapters.length - 1){ showToast("No new chapter yet."); return; }
+  openChapter(currentBook.id, currentChIdx + 1);
 }
 
-// ── COMMENTS ─────────────────────────────────────────────────────
-function commentKey(bookId, chIdx){ return bookId+"_"+chIdx; }
-function renderComments(bookId, chIdx){
-  var key = commentKey(bookId, chIdx);
-  var list = comments[key] || [];
-  document.getElementById("commentsTitle").textContent = "💬 Comments ("+list.length+")";
-  if(!currentUser){
-    document.getElementById("commentFormWrap").innerHTML = '<p style="font-size:0.8rem;color:var(--text2)">Login to comment.</p>';
-  } else {
-    document.getElementById("commentFormWrap").innerHTML = '<input type="text" id="commentInput" placeholder="Write a comment..."><button id="commentSubmit">Post</button>';
-    document.getElementById("commentFormWrap").className = "comment-form";
-    document.getElementById("commentSubmit").addEventListener("click", function(){
-      var txt = document.getElementById("commentInput").value.trim();
-      if(!txt) return;
-      if(!comments[key]) comments[key]=[];
-      comments[key].push({user:currentUser.username, text:txt, date:new Date().toLocaleDateString()});
-      save("bss_comments", comments);
-      document.getElementById("commentInput").value = "";
-      renderComments(bookId, chIdx);
-    });
-  }
-  var cl = document.getElementById("commentList");
-  if(!list.length){ cl.innerHTML='<div class="no-comments">No comments yet. Be the first!</div>'; return; }
-  cl.innerHTML = list.slice().reverse().map(function(c){
-    return '<div class="comment-item">'+
-      '<div class="comment-header">'+
-        '<div class="comment-avatar">'+c.user.charAt(0).toUpperCase()+'</div>'+
-        '<span class="comment-user">'+c.user+'</span>'+
-        '<span class="comment-date">'+c.date+'</span>'+
-      '</div>'+
-      '<div class="comment-text">'+c.text+'</div>'+
-    '</div>';
-  }).join("");
-}
-
-// ── BOOKMARKS ─────────────────────────────────────────────────────
-function toggleBookmark(id, btnEl){
-  if(!currentUser){ showToast("Login to bookmark."); return; }
-  if(bookmarks[id]){ delete bookmarks[id]; if(btnEl) btnEl.classList.remove("saved"); showToast("Bookmark removed."); }
-  else { bookmarks[id]=true; if(btnEl) btnEl.classList.add("saved"); showToast("Bookmarked!"); }
-  save("bss_bookmarks", bookmarks);
-}
-
-function renderBookmarks(){
-  // continue reading
-  var crEl = document.getElementById("continueReading");
-  var lastBookId = null; var lastChIdx = -1;
-  Object.keys(readHistory).forEach(function(id){
-    if(readHistory[id] > lastChIdx){ lastChIdx = readHistory[id]; lastBookId = parseInt(id); }
-  });
-  if(lastBookId){
-    var lb = books.find(function(x){ return x.id===lastBookId; });
-    if(lb){
-      crEl.innerHTML = '<div class="continue-banner" id="continueBanner">'+
-        '<div class="continue-label">▶ Continue Reading</div>'+
-        '<div class="continue-title">'+lb.title+'</div>'+
-        '<div class="continue-ch">'+lb.chapters[lastChIdx].title+'</div>'+
+// SIDEBAR
+function renderSideRanking(){
+  var sorted = books.slice().sort(function(a,b){ return b.views - a.views; });
+  var cls = ["r1","r2","r3","r4","r5"];
+  var html = "";
+  sorted.slice(0,5).forEach(function(b, i){
+    html += '<div class="rank-item" data-id="'+b.id+'">' +
+      '<span class="rank-n '+cls[i]+'">'+(i+1)+'</span>' +
+      '<div class="rank-info"><div class="rank-title">'+b.title+'</div><div class="rank-sub">'+fmtViews(b.views)+' views · '+b.chapters.length+' ch</div></div>' +
       '</div>';
-      document.getElementById("continueBanner").addEventListener("click", function(){ openChapter(lb.id, lastChIdx); });
-    }
-  } else { crEl.innerHTML=''; }
-
-  var savedIds = Object.keys(bookmarks).map(Number);
-  var bmBooks = books.filter(function(b){ return savedIds.indexOf(b.id)>-1; });
-  var el = document.getElementById("bookmarkList");
-  if(!bmBooks.length){ el.innerHTML='<div style="color:var(--text2);font-size:0.85rem;padding:16px 0">No bookmarks yet.</div>'; return; }
-  renderBookList(bmBooks, "bookmarkList");
-}
-
-// ── DASHBOARD ─────────────────────────────────────────────────────
-function renderDashboard(){
-  if(!currentUser) return;
-  var myBooks = books.filter(function(b){ return b.ownerId===currentUser.username; });
-  var totalViews = myBooks.reduce(function(s,b){ return s+b.views; },0);
-  var totalLikes = myBooks.reduce(function(s,b){ return s+b.likes; },0);
-  var totalCh = myBooks.reduce(function(s,b){ return s+b.chapters.length; },0);
-  document.getElementById("dashStats").innerHTML =
-    cell(myBooks.length,"My Books")+cell(totalViews,"Total Views")+cell(totalLikes,"Total Likes")+cell(totalCh,"Chapters");
-  function cell(n,l){ return '<div class="dash-card"><div class="dash-num">'+fmtV(n)+'</div><div class="dash-label">'+l+'</div></div>'; }
-  var db = document.getElementById("dashBooks");
-  if(!myBooks.length){ db.innerHTML='<div style="color:var(--text2);font-size:0.85rem">No books yet. Start writing!</div>'; return; }
-  db.innerHTML = myBooks.map(function(b){
-    return '<div class="dash-book-row">'+
-      '<div class="dash-book-title">'+b.title+'</div>'+
-      '<div class="dash-book-stats">'+
-        '<span>👁 '+fmtV(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📚 '+b.chapters.length+' ch</span>'+
-      '</div>'+
-      '<div class="dash-book-actions">'+
-        '<button class="btn-edit" data-id="'+b.id+'">Edit</button>'+
-        '<button class="btn-del" data-id="'+b.id+'">Delete</button>'+
-      '</div></div>';
-  }).join("");
-  db.querySelectorAll(".btn-del").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var id = parseInt(this.getAttribute("data-id"));
-      if(!confirm("Delete this book?")) return;
-      books = books.filter(function(b){ return b.id!==id; });
-      save("bss_books", books);
-      renderDashboard(); renderBookList(books,"bookListWrap"); renderSideRanking();
-      showToast("Book deleted.");
-    });
+  });
+  var el = document.getElementById("sideRanking");
+  el.innerHTML = html;
+  el.querySelectorAll(".rank-item").forEach(function(item){
+    item.addEventListener("click", function(){ openBookDetail(parseInt(this.getAttribute("data-id"))); });
   });
 }
 
-// ── SIDEBAR ──────────────────────────────────�
+function renderSideLatest(){
+  var allCh = [];
+  books.forEach(function(b){ b.chapters.forEach(function(ch, i){ allCh.push({book:b, ch:ch, idx:i}); }); });
+  allCh.reverse();
+  var html = "";
+  allCh.slice(0,5).forEach(function(item){
+    html += '<div class="ch-sidebar-item" data-id="'+item.book.id+'" data-idx="'+item.idx+'">' +
+      '<div class="ch-s-book">'+item.book.title+'</div>' +
+      '<div class="ch-s-title">'+item.ch.title+'</div>' +
+      '<div class="ch-s-date">'+item.ch.date+'</div>' +
+      '</div>';
+  });
+  var el = document.getElementById("sideLatest");
+  el.innerHTML = html;
+  el.querySelectorAll(".ch-sidebar-item").forEach(function(item){
+    item.addEventListener("click", function(){ openChapter(parseInt(this.getAttribute("data-id")), parseInt(this.getAttribute("data-idx"))); });
+  });
+}
+
+function renderLatestFeed(){
+  var allCh = [];
+  books.forEach(function(b){ b.chapters.forEach(function(ch, i){ allCh.push({book:b, ch:ch, idx:i}); }); });
+  allCh.reverse();
+  var html = "";
+  allCh.forEach(function(item){
+    html += '<div class="ch-feed-item" data-id="'+item.book.id+'" data-idx="'+item.idx+'">' +
+      '<div class="ch-feed-info"><div class="ch-feed-book">'+item.book.title+'</div><div class="ch-feed-title">'+item.ch.title+'</div><div class="ch-feed-date">'+item.ch.date+'</div></div>' +
+      '<button class="read-btn-sm">Read</button>' +
+      '</div>';
+  });
+  var el = document.getElementById("latestFeed");
+  el.innerHTML = html;
+  el.querySelectorAll(".ch-feed-item").forEach(function(item){
+    item.addEventListener("click", function(){ openChapter(parseInt(this.getAttribute("data-id")), parseInt(this.getAttribute("data-idx"))); });
+  });
+}
+
+function renderPopular(){
+  renderBookList(books.slice().sort(function(a,b){ return b.views-a.views; }), "popularList");
+}
+
+function renderRanking(by){
+  var sorted = books.slice().sort(function(a,b){ return by==="likes" ? b.likes-a.likes : b.views-a.views; });
+  var cls = ["r1","r2","r3","r4","r5"];
+  var html = '<div class="book-list">';
+  sorted.forEach(function(b, i){
+    html += '<div class="book-card" data-id="'+b.id+'">' +
+      '<span class="rank-n '+cls[i]+'" style="font-size:1.2rem;width:28px;text-align:center;flex-shrink:0;font-weight:700">'+(i+1)+'</span>' +
+      '<div class="book-info"><div class="book-title">'+b.title+'</div>' +
+      '<div class="book-meta"><span>✍ '+b.author+'</span><span>👁 '+fmtViews(b.views)+'</span><span>❤️ '+b.likes+'</span><span>📚 '+b.chapters.length+' chapters</span></div></div>' +
+      '<div class="book-right"><span class="book-badge badge-genre">'+b.genre+'</span></div></div>';
+  });
+  html += '</div>';
+  var el = document.getElementById("rankingList");
+  el.innerHTML = html;
+  el.querySelectorAll(".book-card").forEach(function(card){
+    card.addEventListener("click", function(){ openBookDetail(parseInt(this.getAttribute("data-id"))); });
+  });
+}
+
+// GENRES & TAGS
+function renderGenres(){
+  var html = "";
+  genres.forEach(function(g){
+    html += '<button class="genre-pill'+(g==="All"?" active":"") +'" data-genre="'+g+'">'+g+'</button>';
+  });
+  var el = document.getElementById("genrePills");
+  el.innerHTML = html;
+  el.addEventListener("click", function(e){
+    var btn = e.target.closest(".genre-pill");
+    if (!btn) return;
+    el.querySelectorAll(".genre-pill").forEach(function(b){ b.classList.remove("active"); });
+    btn.classList.add("active");
+    var g = btn.getAttribute("data-genre");
+    var filtered = g === "All" ? books : books.filter(function(b){ return b.genre === g; });
+    renderBookList(filtered, "bookListWrap");
+    showPage("homePage", document.getElementById("navHome"));
+  });
+}
+
+function renderTags(){
+  var html = "";
+  tagsList.forEach(function(t){
+    html += '<button class="tag-btn" data-tag="'+t+'">#'+t+'</button>';
+  });
+  var el = document.getElementById("tagCloud");
+  el.innerHTML = html;
+  el.addEventListener("click", function(e){
+    var btn = e.target.closest(".tag-btn");
+    if (!btn) return;
+    var t = btn.getAttribute("data-tag");
+    var filtered = books.filter(function(b){ return b.tags.indexOf(t) > -1; });
+    renderBookList(filtered, "bookListWrap");
+    document.getElementById("searchInput").value = t;
+    showPage("homePage", document.getElementById("navHome"));
+  });
+}
+
+// SEARCH
+function handleSearch(){
+  var q = document.getElementById("searchInput").value.trim().toLowerCase();
+  if (!q){ renderBookList(books, "bookListWrap"); return; }
+  var r = books.filter(function(b){ return b.title.toLowerCase().indexOf(q)>-1 || b.author.toLowerCase().indexOf(q)>-1 || b.synopsis.toLowerCase().indexOf(q)>-1; });
+  renderBookList(r, "bookListWrap");
+  showPage("homePage", document.getElementById("navHome"));
+}
+
+// WRITE
+function populateBookSelect(){
+  var sel = document.getElementById("wSelectBook");
+  sel.innerHTML = books.map(function(b){ return '<option value="'+b.id+'">'+b.title+'</option>'; }).join("");
+}
+
+function bindWrite(){
+  document.getElementById("wtabNew").addEventListener("click", function(){
+    setTabActive(this, ["wtabNew","wtabChapter"]);
+    document.getElementById("newBookForm").style.display = "block";
+    document.getElementById("addChapterForm").style.display = "none";
+  });
+  document.getElementById("wtabChapter").addEventListener("click", function(){
+    setTabActive(this, ["wtabNew","wtabChapter"]);
+    document.getElementById("newBookForm").style.display = "none";
+    document.getElementById("addChapterForm").style.display = "block";
+    populateBookSelect();
+  });
+  document.getElementById("wContent").addEventListener("input", function(){
+    var w = this.value.trim() ? this.value.trim().split(/\s+/).length : 0;
+    document.getElementById("wcDisplay").textContent = w + " words";
+  });
+  document.getElementById("wNewChContent").addEventListener("input", function(){
+    var w = this.value.trim() ? this.value.trim().split(/\s+/).length : 0;
+    document.getElementById("wcDisplay2").textContent = w + " words";
+  });
+  document.getElementById("saveDraftBtn").addEventListener("click", function(){
+    if (!document.getElementById("wTitle").value.trim()){ showToast("Please enter a title."); return; }
+    showToast("Draft saved ✓");
+  });
+  document.getElementById("publishBookBtn").addEventListener("click", function(){
+    var title = document.getElementById("wTitle").value.trim();
+    var synopsis = document.getElementById("wSynopsis").value.trim();
+    var genre = document.getElementById("wGenre").value;
+    var tagsRaw = document.getElementById("wTags").value;
+    var chTitle = document.getElementById("wChTitle").value.trim() || "Chapter 1";
+    var content = document.getElementById("wContent").value.trim();
+    if (!title){ showToast("Please enter a title."); return; }
+    if (content.length < 20){ showToast("Write more content."); return; }
+    var newBook = {
+      id: books.length + 1, title: title, author: "You", genre: genre || "Other",
+      tags: tagsRaw ? tagsRaw.split(",").map(function(t){ return t.trim(); }).filter(Boolean) : [],
+      views: 0, likes: 0, status: "Ongoing", date: "Today",
+      synopsis: synopsis || content.slice(0,120)+"…",
+      chapters:[{title: chTitle, date: "Today", content: content}]
+    };
+    books.unshift(newBook);
+    renderBookList(books, "bookListWrap");
+    renderSideRanking();
+    renderSideLatest();
+    document.getElementById("wTitle").value = "";
+    document.getElementById("wSynopsis").value = "";
+    document.getElementById("wContent").value = "";
+    document.getElementById("wChTitle").value = "";
+    document.getElementById("wcDisplay").textContent = "0 words";
+    showToast("Book published! 🎉");
+    setTimeout(function(){ showPage("homePage", document.getElementById("navHome")); }, 1200);
+  });
+  document.getElementById("addChapterBtn").addEventListener("click", function(){
+    var bookId = parseInt(document.getElementById("wSelectBook").value);
+    var chTitle = document.getElementById("wNewChTitle").value.trim();
+    var content = document.getElementById("wNewChContent").value.trim();
+    var b = books.find(function(x){ return x.id === bookId; });
+    if (!b){ showToast("Select a book."); return; }
+    if (!chTitle){ showToast("Enter chapter title."); return; }
+    if (content.length < 20){ showToast("Write more content."); return; }
+    b.chapters.push({title: chTitle, date: "Today", content: content});
+    renderSideLatest();
+    renderLatestFeed();
+    document.getElementById("wNewChTitle").value = "";
+    document.getElementById("wNewChContent").value = "";
+    document.getElementById("wcDisplay2").textContent = "0 words";
+    showToast("Chapter added! ✓");
+    setTimeout(function(){ openBookDetail(bookId); }, 900);
+  });
+}
+
+// TOAST
+function showToast(msg){
+  var t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(function(){ t.classList.remove("show"); }, 2600);
+}
+
+})();
+</script>
+</body>
+</html>
